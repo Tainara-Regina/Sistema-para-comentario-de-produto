@@ -1,0 +1,48 @@
+<!-- ESTE É O BOX DE LOGIN E CADASTRO -->
+<!--  Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal conteudo -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="login-page">
+  <div class="form">
+      <form name="formuser" class="register-form esconde" form action="cadastrar.php" method="post" enctype="multipart/form-data" >
+	<p id="status_cadastra"> Cadastre-se </p>
+      <input  id="nome_cadastra"  name="nome_cadastra"  type="text" placeholder="nome"/>
+      <input  id="senha_cadastra" name="senha_cadastra" type="password" placeholder="senha" />
+      <input  id="email_cadastra" name="email_cadastra" type="text" placeholder="email " autocomplete="off" onkeyup =" return verificaEmailCadastrado();"/>
+      <input type="hidden" id="hidden" name="hidden" value="">
+           <p style=" color: #363636;"> foto</p>
+	  <input  id="imagem" name="imagem" type="file" accept="image/*" placeholder="imagem"/>
+          <input id="btnCadastrar" type="submit" name="submit" value="criar conta" onclick="return validar();">  
+      
+     <p class="message">Já é registrado? <a href="#">Faça o login</a></p> 
+    </form>
+            
+      <div class="login-form esconde" action="logar.php"  method="post">
+	  <p id="status_login"> Realize o login </p>
+        <input name="email" id="email" type="text" placeholder="email"/>
+        <input name="senha" id="senha" type="password" placeholder="senha"/>
+      <button onclick = "logar();">login</button>
+      <p class="message">Ainda não é regstrado? <a href="#">Criar conta</a></p>
+    </div>
+  </div>
+</div>
+  </div>
+  
+  
+  <script> 
+    $(document).ready(function(){  
+    
+    $('.message a').click(function() {
+  $('.esconde').animate({
+    height: "toggle",
+    opacity: "toggle"
+  }, "slow");
+});
+});
+  </script>
+
+</div>
+  
